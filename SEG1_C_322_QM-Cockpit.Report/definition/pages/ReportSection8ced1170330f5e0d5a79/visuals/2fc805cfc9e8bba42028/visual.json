@@ -1,0 +1,179 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "2fc805cfc9e8bba42028",
+  "position": {
+    "x": 188.40308015631354,
+    "y": 153.96226415094338,
+    "z": 0,
+    "height": 93.153638814016162,
+    "width": 1601.7250673854446,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Diese Seite kann eine Startseite / Executive Summary sein. Die grünen Navigations-Schaltflächen",
+                    "textStyle": {
+                      "fontSize": "21.3333px",
+                      "color": "#999999"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontSize": "21.3333px",
+                      "color": "#b3b3b3"
+                    }
+                  },
+                  {
+                    "value": "ändern sich automatisch beim Umbenennen oder wenn neue Seiten hinzugefügt werden. Links kann der Aufbau eines Reports sowie der Inhalt kurz erläutert werden. Rechts können zusammenfassende KPI's im grauen Feld ergänzt werden",
+                    "textStyle": {
+                      "fontSize": "21.3333px",
+                      "color": "#999999"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#999999"
+                    }
+                  },
+                  {
+                    "value": "--> bitte diesen Satz und den orangen Punkt löschen (oder Selektionsgruppe \"Infos\" ausblenden)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13.3333px",
+                      "color": "#ff0000"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

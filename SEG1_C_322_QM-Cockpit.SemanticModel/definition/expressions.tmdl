@@ -1,0 +1,80 @@
+expression Logo = "seg1" meta [IsParameterQuery=true, List={"m-industrie", "seg1", "seg2", "seg3", "seg4", "seg5", "digitalMIND", "PowerBI", "ONE", "GMAA", "GMAA FMA"}, DefaultValue="m-industrie", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 165483d9-874e-43ef-8b85-012dfe265963
+	queryGroup: SystemData\Parameter
+
+	annotation PBI_ResultType = Text
+
+/// Bitte wähle das Startdatum der Datentabelle (oder Datetable) im Format 01.01.2022 aus
+expression 'Datetable Startdatum' = #date(2023, 1, 1) meta [IsParameterQuery=true, ExpressionIdentifier=DatetableParameterSelection, Type="Date", IsParameterQueryRequired=true]
+	lineageTag: b2670e3b-14d8-4a53-a4c8-674f8414373e
+	queryGroup: SystemData\Parameter
+
+	annotation PBI_ResultType = Date
+
+/// Bitte wähle das Enddatum der Datentabelle (oder Datetable) im Format 31.12.2029 aus
+expression 'Datetable Enddatum' = #date(2040, 12, 31) meta [IsParameterQuery=true, ExpressionIdentifier=DatetableParameterSelectionEnd, Type="Date", IsParameterQueryRequired=true]
+	lineageTag: 877db98a-442e-4af3-adb3-5d25b4e7e4db
+	queryGroup: SystemData\Parameter
+
+	annotation PBI_ResultType = Date
+
+/// Bei Bedarf kann hier der Schichtstart eingetragen werden, als Uhrzeit (z.b. 06:00:00 für 6.00 Uhr)
+expression Schicht-Start = null meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=false]
+	lineageTag: da4e0793-3f52-40f0-a6f9-ceba3ceb936b
+	queryGroup: SystemData\Parameter
+
+	annotation PBI_ResultType = Null
+
+/// Wähle die Sprache der Datentabelle (EN für Monday, FR für Lundi). Die Spaltenüberschriften sind generell in Englisch
+expression 'Datetable Sprache' = "DE" meta [IsParameterQuery=true, List={"EN", "DE", "FR", "IT"}, DefaultValue="EN", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 4a629c2c-cf89-4b58-9707-f551501a8ceb
+	queryGroup: SystemData\Parameter
+
+	annotation PBI_ResultType = Text
+
+expression SD_SolutionList_DigiSol =
+		let
+		    Source = SharePoint.Tables("https://migros.sharepoint.com/sites/MICH_GRM-PPB", [Implementation="2.0", ViewMode="All"]),
+		    #"9894b20b-62f8-43dc-9c79-270f0ce4bc7e" = Source{[Id="9894b20b-62f8-43dc-9c79-270f0ce4bc7e"]}[Items],
+		    #"Renamed Columns" = Table.RenameColumns(#"9894b20b-62f8-43dc-9c79-270f0ce4bc7e",{{"ID", "ID.1"}}),
+		    #"Expanded Owner" = Table.ExpandTableColumn(#"Renamed Columns", "Owner", {"email"}, {"Owner.email"})
+		in
+		    #"Expanded Owner"
+	lineageTag: a1c290b9-aeea-4857-bdff-c6b713e2f4ee
+	queryGroup: SHPList
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression DatetableParameterSelection =
+		let
+		    Quelle = List.Dates(#date(Date.Year(#date(2010,1,1)),Date.Month(#date(2010,1,1)),Date.Day(#date(2010,1,1))),Duration.TotalDays(#date(2030,1,1)-#date(2010,1,1)),#duration(1, 0, 0, 0)),
+		    #"In Tabelle konvertiert" = Table.FromList(Quelle, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Geänderter Typ" = Table.TransformColumnTypes(#"In Tabelle konvertiert",{{"Column1", type date}}),
+		    Column1 = #"Geänderter Typ"[Column1]
+		in
+		    Column1
+	lineageTag: 6758bd2a-6d8b-492c-9377-4b242f864592
+	queryGroup: SystemData\Parameter
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = List
+
+expression DatetableParameterSelectionEnd =
+		let
+		    Quelle = List.Dates(#date(Date.Year(#date(1900,1,1)),Date.Month(#date(1900,1,1)),Date.Day(#date(1900,1,1))),Duration.TotalDays(#date(2200,1,1)-#date(1900,1,1))+1,#duration(1, 0, 0, 0)),
+		    #"In Tabelle konvertiert" = Table.FromList(Quelle, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Geänderter Typ" = Table.TransformColumnTypes(#"In Tabelle konvertiert",{{"Column1", type date}}),
+		    #"Sorted Rows" = Table.Sort(#"Geänderter Typ",{{"Column1", Order.Descending}}),
+		    Column1 = #"Sorted Rows"[Column1]
+		in
+		    Column1
+	lineageTag: ab24d5ae-de42-48ce-b2a6-ee18eaa4f978
+	queryGroup: SystemData\Parameter
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = List
+

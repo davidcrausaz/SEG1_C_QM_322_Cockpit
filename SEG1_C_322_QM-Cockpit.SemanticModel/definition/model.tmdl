@@ -1,0 +1,44 @@
+model Model
+	culture: de-CH
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: de-CH
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup SystemData
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup SystemData\Parameter
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup SystemData\Datetable
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup SHPList
+
+	annotation PBI_QueryGroupOrder = 1
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["SD_SolutionList_DigiSol_items","SD_SolutionList_DigiSol","SD_Datetable","SD_Timetable_Schichtmodel","SD_Example_BestPractise","SD_Logo_BildURLs","Logo","Datetable Startdatum","Datetable Enddatum","Datetable Sprache","Reportname","ReportNameParameterSelection","DatetableParameterSelection","Measures (2)","DatetableParameterSelectionEnd","Schicht-Start"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table SD_Datetable
+ref table SD_Logo_BildURLs
+ref table DateTableTemplate_cd959091-3b8a-474d-bba5-0d32f09ccab7
+ref table 'Measures (2)'
+ref table SD_Example_BestPractise
+ref table ReportNameParameterSelection
+ref table SD_SolutionList_DigiSol_items
+ref table Reportname
+ref table SD_Timetable_Schichtmodel
+ref table LocalDateTable_7c557897-fa67-41ba-b9d0-2eb12027f53f
+ref table LocalDateTable_23437507-97a9-422b-8035-9ee4c971924c
+
+ref cultureInfo de-CH
+

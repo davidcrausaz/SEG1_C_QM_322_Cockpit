@@ -1,0 +1,153 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 593.58932882473255,
+            "y": 289.43705723366935
+          },
+          "nodeIndex": "SD_Logo_BildURLs",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 369
+        },
+        {
+          "location": {
+            "x": 303.89164774566279,
+            "y": 339.64360630397607
+          },
+          "nodeIndex": "SD_Datetable",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 725.28570776492347
+        },
+        {
+          "location": {
+            "x": 601.35019376736818,
+            "y": 7.5421244585246612
+          },
+          "nodeIndex": "Measures (2)",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 314.87998569735646,
+            "y": 5.0238152335465145
+          },
+          "nodeIndex": "SD_Example_BestPractise",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 128
+        },
+        {
+          "location": {
+            "x": 603.39879949018746,
+            "y": 99.310995995314642
+          },
+          "nodeIndex": "ReportNameParameterSelection",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 972.30388653875673,
+            "y": 367.72171394642237
+          },
+          "nodeIndex": "SD_SolutionList_DigiSol_items",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 124
+        },
+        {
+          "location": {
+            "x": 587.691950490698,
+            "y": 395.30677815256462
+          },
+          "nodeIndex": "Reportname",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 310.42624372350838,
+            "y": 96.272967750727815
+          },
+          "nodeIndex": "SD_Timetable_Schichtmodel",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 128
+        }
+      ],
+      "name": "Alle Tabellen",
+      "zoomValue": 79.553182037699742,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "SD_Datetable",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Standard",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Alle Tabellen",
+  "defaultDiagram": "Alle Tabellen"
+}

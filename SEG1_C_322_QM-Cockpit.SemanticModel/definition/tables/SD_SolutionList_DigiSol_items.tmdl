@@ -1,0 +1,89 @@
+table SD_SolutionList_DigiSol_items
+	isHidden
+	lineageTag: 6f38e65d-5df2-456c-b8a3-aaee1069cbd4
+
+	column StorrageLocationPBIX
+		dataType: string
+		isHidden
+		lineageTag: 23f40938-a47f-4797-8fce-8998d93d4730
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: StorrageLocationPBIX
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Report
+		dataType: string
+		isHidden
+		lineageTag: b2786a55-0664-4419-a518-6a09b4465f67
+		summarizeBy: none
+		sourceColumn: Report
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owner
+		dataType: string
+		isHidden
+		lineageTag: 6bd02371-af0a-4aba-a92b-65b023f78200
+		summarizeBy: none
+		sourceColumn: Owner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column pbi_actualisation
+		dataType: string
+		lineageTag: 1fb7ca2c-9ed5-4352-9dcb-8e052dacb9ca
+		summarizeBy: none
+		sourceColumn: pbi_actualisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Creator
+		dataType: string
+		lineageTag: 7c12ff6f-30c5-4209-855d-47f69e934e57
+		summarizeBy: none
+		sourceColumn: Creator
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resp. DigiSol'
+		dataType: string
+		lineageTag: 75c0571c-9a6b-4ecc-b2f6-dbb200998998
+		summarizeBy: none
+		sourceColumn: Resp. DigiSol
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SD_SolutionList_DigiSol_items-c08dd3cd-fa2e-4299-8f3c-0d2834f974b3 = m
+		mode: import
+		queryGroup: SHPList
+		source =
+				let
+				    Source = SharePoint.Tables("https://migros.sharepoint.com/sites/MICH_GRM-PPB", [Implementation="2.0", ViewMode="All"]),
+				    #"d3db405f-5c4d-414d-afe5-768fc3b4c9a9" = Source{[Id="d3db405f-5c4d-414d-afe5-768fc3b4c9a9"]}[Items],
+				    #"Filtered Rows" = Table.SelectRows(#"d3db405f-5c4d-414d-afe5-768fc3b4c9a9", each ([Tool] = "PowerBI")),
+				    #"Expanded SolutionList_DigiSol_ID1" = Table.ExpandListColumn(#"Filtered Rows", "SolutionList_DigiSol_ID"),
+				    #"Expanded Resp_digiSol1" = Table.ExpandListColumn(#"Expanded SolutionList_DigiSol_ID1", "Resp_digiSol"),
+				    #"Expanded Resp_digiSol2" = Table.ExpandRecordColumn(#"Expanded Resp_digiSol1", "Resp_digiSol", {"email"}, {"Resp_digiSol.email"}),
+				    #"Expanded SolutionList_DigiSol_ID2" = Table.ExpandRecordColumn(#"Expanded Resp_digiSol2", "SolutionList_DigiSol_ID", {"lookupId", "lookupValue"}, {"SolutionList_DigiSol_ID.lookupId", "SolutionList_DigiSol_ID.lookupValue"}),
+				    #"Expanded Creator1" = Table.ExpandListColumn(#"Expanded SolutionList_DigiSol_ID2", "Creator"),
+				    #"Expanded Creator2" = Table.ExpandRecordColumn(#"Expanded Creator1", "Creator", {"email"}, {"Creator.email"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Creator2",{{"Creator.email", "Creator"}, {"Resp_digiSol.email", "Resp. DigiSol"}, {"off_Naming", "Report"}, {"pbi_storrageLocationPBIX", "StorrageLocationPBIX"}}),
+				    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"SolutionList_DigiSol_ID.lookupId"}, SD_SolutionList_DigiSol, {"ID.1"}, "SD_SolutionList_DigiSol", JoinKind.LeftOuter),
+				    #"Expanded SD_SolutionList_DigiSol" = Table.ExpandTableColumn(#"Merged Queries", "SD_SolutionList_DigiSol", {"Owner.email"}, {"Owner"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Expanded SD_SolutionList_DigiSol",{"Creator", "pbi_actualisation", "StorrageLocationPBIX", "Resp. DigiSol", "Report", "Owner"})
+				in
+				    #"Removed Other Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,64 @@
+table SD_Timetable_Schichtmodel
+	isHidden
+	lineageTag: ee827bee-89f1-4351-9dd7-a21184c5e93a
+
+	column Datetime
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: b98600ea-bb90-4857-a4d2-81a3e6b22861
+		summarizeBy: none
+		sourceColumn: Datetime
+
+		variation Variation
+			isDefault
+			relationship: aefbae53-a299-408b-abe1-8710866223e8
+			defaultHierarchy: LocalDateTable_7c557897-fa67-41ba-b9d0-2eb12027f53f.Datumshierarchie
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date2ConnectDatetable
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 0fa8dd6a-dcea-4733-ae8d-f69a0819f0c8
+		summarizeBy: none
+		sourceColumn: Date2ConnectDatetable
+
+		variation Variation
+			isDefault
+			relationship: 5c542707-570d-460f-a9df-7b112e776592
+			defaultHierarchy: LocalDateTable_23437507-97a9-422b-8035-9ee4c971924c.Datumshierarchie
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition SD_Timetable_Schichtmodel-f46aad53-d043-43e3-aa43-d1785376aeb6 = m
+		mode: import
+		queryGroup: SystemData\Datetable
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("Rc+7CYBAGAThXi42+Gd928px/behII7ZBAsf23srrqo2pqdizdZirdZm7dZhnV9RlgYaaKCBBhpooIFGNKIRjfw/3t24AQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Time = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Time", type time}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "hide", each 1),
+				    #"Merged Queries" = Table.NestedJoin(#"Added Custom", {"hide"}, SD_Datetable, {"hide"}, "SD_Datetable", JoinKind.LeftOuter),
+				    #"Expanded SD_Datetable" = Table.ExpandTableColumn(#"Merged Queries", "SD_Datetable", {"Date"}, {"Date"}),
+				    #"Inserted Merged Date and Time" = Table.AddColumn(#"Expanded SD_Datetable", "Datetime", each [Date] & [Time], type datetime),
+				    #"Removed Columns" = Table.RemoveColumns(#"Inserted Merged Date and Time",{"hide"}),
+				    #"Sorted Rows" = Table.Sort(#"Removed Columns",{{"Datetime", Order.Ascending}}),
+				    #"Added Custom1" = Table.AddColumn(#"Sorted Rows", "Date2ConnectDatetable", each if [Time] < #"Schicht-Start" then [Date]-#duration(1,0,0,0) else [Date]),
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Added Custom1", {"Date2ConnectDatetable"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Errors",{{"Date2ConnectDatetable", type date}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Changed Type1",{"Time", "Date"})
+				in
+				    #"Removed Columns1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

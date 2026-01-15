@@ -1,0 +1,54 @@
+table ReportNameParameterSelection
+	isHidden
+	lineageTag: 35d59cf0-af0b-4ce4-a2b3-17e0ac9e81df
+
+	column ReportNameParameterSelection
+		dataType: string
+		isHidden
+		lineageTag: b1002659-c96d-46ed-9b25-3dd0be71148c
+		summarizeBy: none
+		sourceColumn: ReportNameParameterSelection
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ReportNameParameterSelection-87749ff3-2c2b-4638-bab9-a52bfad465c2 = m
+		mode: import
+		queryGroup: SystemData\Parameter
+		source =
+				let
+				    Source = SharePoint.Tables("https://migros.sharepoint.com/sites/MICH_GRM-PPB", [Implementation="2.0", ViewMode="All"]),
+				    #"d3db405f-5c4d-414d-afe5-768fc3b4c9a9" = Source{[Id="d3db405f-5c4d-414d-afe5-768fc3b4c9a9"]}[Items],
+				    #"Grouped Rows" = Table.Group(#"d3db405f-5c4d-414d-afe5-768fc3b4c9a9", {"off_Naming"}, {{"Count", each Table.RowCount(_), Int64.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Grouped Rows",{"Count"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([off_Naming] <> null)),
+				    #"Inserted Text Between Delimiters" = Table.AddColumn(#"Filtered Rows", "Text Between Delimiters", each Text.BetweenDelimiters([off_Naming], "_", "_", 1, 0), type text),
+				    #"Added Custom Column" = Table.AddColumn(#"Inserted Text Between Delimiters", "Custom", each let splitoffNaming = List.Accumulate(Splitter.SplitTextByCharacterTransition({"0".."9"}, (c) => not List.Contains({"0".."9"}, c))([off_Naming]), {}, (result, current) => result & Splitter.SplitTextByCharacterTransition((c) => not List.Contains({"0".."9"}, c), {"0".."9"})(current)), splitoffNaming2 = Splitter.SplitTextByCharacterTransition((c) => not List.Contains({"0".."9"}, c), {"0".."9"})([off_Naming]) in Text.Combine({Text.Reverse(Text.Middle(Text.Reverse(splitoffNaming{1}?), 1)), Text.Start(splitoffNaming2{2}?, 3), Text.Middle(splitoffNaming{1}?, 2)}), type text),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom Column",{{"Text Between Delimiters", Int64.Type}}),
+				    #"Sorted Rows3" = Table.Sort(#"Changed Type",{{"Custom", Order.Descending}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Sorted Rows3","_","",Replacer.ReplaceText,{"Custom"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Custom", Int64.Type}}),
+				    #"Replaced Errors1" = Table.ReplaceErrorValues(#"Changed Type1", {{"Custom", 0}}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Errors1",null,0,Replacer.ReplaceValue,{"Custom"}),
+				    #"Added Custom Column1" = Table.AddColumn(#"Replaced Value1", "Custom.1", each let splitoffNaming = Splitter.SplitTextByDelimiter("_CH ", QuoteStyle.None)([off_Naming]), splitsplitoffNaming0 = List.Reverse(Splitter.SplitTextByDelimiter("_", QuoteStyle.None)(splitoffNaming{0}?)) in splitsplitoffNaming0{1}?, type text),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Added Custom Column1",{"Text Between Delimiters"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Removed Columns2",{{"Custom.1", Int64.Type}}),
+				    #"Replaced Errors2" = Table.ReplaceErrorValues(#"Changed Type2", {{"Custom.1", 0}}),
+				    #"Added Custom" = Table.AddColumn(#"Replaced Errors2", "Text Between Delimiters", each if [Custom] = 0 then [Custom.1] else [Custom]),
+				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Added Custom", {{"Text Between Delimiters", 0}}),
+				    #"Removed Columns3" = Table.RemoveColumns(#"Replaced Errors",{"Custom", "Custom.1"}),
+				    #"Sorted Rows5" = Table.Sort(#"Removed Columns3",{{"Text Between Delimiters", Order.Descending}}),
+				    #"Filtered Rows2" = Table.SelectRows(#"Sorted Rows5", each not Text.Contains([off_Naming], "getDataID")),
+				    #"Inserted First Characters" = Table.AddColumn(#"Filtered Rows2", "First Characters", each Text.Start([off_Naming], 1), type text),
+				    #"Sorted Rows" = Table.Sort(#"Inserted First Characters",{{"Text Between Delimiters", Order.Descending}, {"First Characters", Order.Ascending}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Sorted Rows",{"Text Between Delimiters", "First Characters"}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Removed Columns1", each ([off_Naming] <> "")),
+				    off_Naming = #"Filtered Rows1"[off_Naming]
+				in
+				    off_Naming
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = List
+

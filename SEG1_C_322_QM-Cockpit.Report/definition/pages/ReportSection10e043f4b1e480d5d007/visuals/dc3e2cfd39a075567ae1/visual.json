@@ -1,0 +1,216 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "dc3e2cfd39a075567ae1",
+  "position": {
+    "x": 182.42587601078168,
+    "y": 160.43126684636118,
+    "z": 5000,
+    "height": 71.159029649595681,
+    "width": 1600.431266846361,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Auf der ",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": "Power-BI-SharePoint Seite der Migros Industrie",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "21.3333px"
+                    },
+                    "url": "https://migros.sharepoint.com/sites/MICH_ARG-PowerPlatform/SitePages/PowerBI.aspx?OR=Teams-HL&CT=1652165301743&params=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMjAzMDcwMTYxMCJ9"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": "findest du zahlreiche Informationen zum ",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": "Prozess ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": "(von der Ideeneingabe durch die ",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": "SolutionApp",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    },
+                    "url": "https://apps.powerapps.com/play/e/74faf37c-4a7c-4f9f-9d7c-459d1a072322/a/63d36d4b-40d2-41c3-b254-63ac87e423d0?tenantId=35aa8c5b-ac0a-4b15-9788-ff6dfa22901f&source=portal&screenColor=rgba%28114%2c%20169%2c%2079%2c%201%29#"
+                  },
+                  {
+                    "value": " bis zur Veröffentlichung), die Schulungsplattform von Wiki, den Videokanal, die ",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": "Migros-weite Power BI ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": "Community",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "21.3333px"
+                    },
+                    "url": "https://teams.microsoft.com/l/team/19:e8153efc1c75416eab6acd8f4c5c31eb%40thread.tacv2/conversations?groupId=f98a7317-be68-4f2f-8090-e30994c62359&tenantId=35aa8c5b-ac0a-4b15-9788-ff6dfa22901f"
+                  },
+                  {
+                    "value": ", die Governance für die Nomenklatur usw.",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

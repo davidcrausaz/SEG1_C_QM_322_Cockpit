@@ -1,0 +1,17 @@
+table 'Measures (2)'
+	lineageTag: 907f2d58-0ac2-4b6d-9826-d98e8fdc4ad1
+
+	measure User = USERPRINCIPALNAME()
+		lineageTag: 9474a4b7-0c04-427b-ad9f-300c3e7626e0
+
+	partition 'Measures (2)-12a7151e-ec52-4f51-a0b9-41f9a1b00ed1' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

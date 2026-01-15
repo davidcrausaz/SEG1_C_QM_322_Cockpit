@@ -1,0 +1,197 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "e88742af363d3002b62c",
+  "position": {
+    "x": 182.42587601078168,
+    "y": 239.35309973045821,
+    "z": 7000,
+    "height": 94.447439353099725,
+    "width": 1600.431266846361,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Gemäss Governance muss die",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": " Exportfunktion in PowerBI deaktiviert",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": " sein. Verantwortlich für die Einhaltung ist der Ersteller (Report Creator). Die Exportfunktion muss unter ",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": "Options/Current File/Report Settings",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "21.3333px",
+                      "textDecoration": "underline",
+                      "color": "#ff6600"
+                    }
+                  },
+                  {
+                    "value": " deaktiviert werden. Das",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "21.3333px"
+                    }
+                  },
+                  {
+                    "value": "Kurzvideo ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "21.3333px"
+                    },
+                    "url": "https://web.microsoftstream.com/video/8e06e849-3002-4b94-9722-b1ed0981d01b"
+                  },
+                  {
+                    "value": "zeigt wie. Ausnahmen müssen vom Ersteller schriftlich begründet, festgehalten und im Speicherordner des PBIX-Files abgelegt werden. ",
+                    "textStyle": {
+                      "fontSize": "21.3333px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

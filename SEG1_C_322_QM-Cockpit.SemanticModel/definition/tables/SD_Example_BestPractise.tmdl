@@ -1,0 +1,42 @@
+table SD_Example_BestPractise
+	isHidden
+	lineageTag: 82be8f19-2433-4eaa-a443-f230d907a369
+
+	column Land
+		dataType: string
+		isHidden
+		lineageTag: e02befdb-0322-49b9-a89f-9c4897b21d9a
+		summarizeBy: none
+		sourceColumn: Land
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wert
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9e2d0f39-d290-4649-8e94-3c70fa02f744
+		summarizeBy: sum
+		sourceColumn: Wert
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SD_Example_BestPractise-9bcbc61c-a633-4420-abed-5f551c0574c2 = m
+		mode: import
+		queryGroup: SystemData
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcvZQ0lEyNDBQitWJVgoNBnEsIBw3TyAHyvYMAUmYQDgBPkCOsSmQEwsA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Country = _t, Value = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Country", type text}, {"Value", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Country", "Land"}, {"Value", "Wert"}})
+				in
+				    #"Renamed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

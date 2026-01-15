@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "364c5d0b4b2992a1c96c",
+  "position": {
+    "x": 1650,
+    "y": 0,
+    "z": 2000,
+    "height": 70,
+    "width": 100,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "simpleImageEBC4593F96F1425FB3D84C5BF02B5075",
+    "query": {
+      "queryState": {
+        "imageURL": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SD_Logo_BildURLs"
+                    }
+                  },
+                  "Property": "NotIndustries"
+                }
+              },
+              "queryRef": "_Logo_BildURLs.NotIndustries"
+            }
+          ]
+        },
+        "altText": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SD_Logo_BildURLs"
+                    }
+                  },
+                  "Property": "Logo"
+                }
+              },
+              "queryRef": "_Logo_BildURLs.Logo"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "altTextSettings": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "imageSettings": [
+        {
+          "properties": {
+            "imageAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'mcenter'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

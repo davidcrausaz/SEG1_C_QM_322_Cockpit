@@ -1,0 +1,15 @@
+relationship 7b02a660-67ea-4a77-b930-125179249b43
+	crossFilteringBehavior: bothDirections
+	fromColumn: SD_SolutionList_DigiSol_items.Report
+	toColumn: Reportname.Reportname
+
+relationship aefbae53-a299-408b-abe1-8710866223e8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SD_Timetable_Schichtmodel.Datetime
+	toColumn: LocalDateTable_7c557897-fa67-41ba-b9d0-2eb12027f53f.Date
+
+relationship 5c542707-570d-460f-a9df-7b112e776592
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SD_Timetable_Schichtmodel.Date2ConnectDatetable
+	toColumn: LocalDateTable_23437507-97a9-422b-8035-9ee4c971924c.Date
+

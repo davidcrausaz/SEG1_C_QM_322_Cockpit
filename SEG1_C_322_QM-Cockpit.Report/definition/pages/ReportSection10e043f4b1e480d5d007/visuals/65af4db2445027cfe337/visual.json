@@ -1,0 +1,308 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "65af4db2445027cfe337",
+  "position": {
+    "x": 181.93678927142972,
+    "y": 680.70096463022526,
+    "z": 13000,
+    "height": 92.60450160771704,
+    "width": 1645.2733118971059,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SD_SolutionList_DigiSol_items"
+                    }
+                  },
+                  "Property": "Owner"
+                }
+              },
+              "queryRef": "SD_SolutionList_DigiSol_items.Auftraggeber",
+              "displayName": "Auftraggeber"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SD_SolutionList_DigiSol_items"
+                    }
+                  },
+                  "Property": "Creator"
+                }
+              },
+              "queryRef": "SolutionList_DigiSol_items.Creator",
+              "displayName": "Report Ersteller"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SD_SolutionList_DigiSol_items"
+                    }
+                  },
+                  "Property": "Resp. DigiSol"
+                }
+              },
+              "queryRef": "SolutionList_DigiSol_items.Resp. DigiSol",
+              "displayName": "Digital Solution Verantwortlicher"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SD_SolutionList_DigiSol_items"
+                    }
+                  },
+                  "Property": "pbi_actualisation"
+                }
+              },
+              "queryRef": "SD_SolutionList_DigiSol_items.pbi_actualisation",
+              "displayName": "Aktualisierungshinw."
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SD_SolutionList_DigiSol_items"
+                    }
+                  },
+                  "Property": "StorrageLocationPBIX"
+                }
+              },
+              "queryRef": "SolutionList_DigiSol_items.StorrageLocationPBIX",
+              "displayName": "Link PBIX"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "SD_SolutionList_DigiSol_items"
+                  }
+                },
+                "Property": "Resp. DigiSol"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "urlIcon": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "383.79409708342274D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SolutionList_DigiSol_items.Creator"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "391.2281727443484D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SolutionList_DigiSol_items.Resp. DigiSol"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "491.16675681163053D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SD_SolutionList_DigiSol_items.Auftraggeber"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "250.99674804025824D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SD_SolutionList_DigiSol_items.pbi_actualisation"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter57120f6ab4abb0190362",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Reportname"
+              }
+            },
+            "Property": "Reportname"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "r",
+              "Entity": "Reportname",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "r"
+                            }
+                          },
+                          "Property": "Reportname"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "isLockedInViewMode": true
+      }
+    ]
+  }
+}

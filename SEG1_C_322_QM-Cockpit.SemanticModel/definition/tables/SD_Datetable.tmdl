@@ -1,0 +1,554 @@
+table SD_Datetable
+	lineageTag: f79f1dc8-b8ea-4f81-9680-e9f567161caf
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 628cef2f-a191-4e01-aad6-8ca1059270aa
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DateAsInteger
+		dataType: string
+		lineageTag: d1fe6145-6ba7-4480-a4c4-2b3497fed13f
+		summarizeBy: none
+		sourceColumn: DateAsInteger
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d802959-3dd1-4d6c-a3e2-8fbfa2e96efe
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearShort
+		dataType: int64
+		formatString: 0
+		lineageTag: 50f2daba-3ae8-4c8a-8108-30defffd9547
+		summarizeBy: sum
+		sourceColumn: YearShort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		lineageTag: 63d53829-ee10-4fa5-b7c8-89c9d3a527e8
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QuarterName
+		dataType: string
+		lineageTag: b69f17ca-0aac-418a-bc77-f1b763d76f98
+		summarizeBy: none
+		sourceColumn: QuarterName
+		sortByColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e90d91d-2653-4edf-ae12-d047d7c9be81
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: f7097d77-11f5-41c0-898a-78952c26408a
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNameShort
+		dataType: string
+		lineageTag: 8605628b-643e-48cd-bf4c-d215d4f830f2
+		summarizeBy: none
+		sourceColumn: MonthNameShort
+		sortByColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: ffaa2032-f7e0-4536-93d1-5b53f008232e
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: int64
+		lineageTag: 31862900-944e-461d-8d6b-0c804873fd20
+		summarizeBy: sum
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DayOfWeekName
+		dataType: string
+		lineageTag: 338a980f-3212-4593-8d71-430d2e5e0d1f
+		summarizeBy: none
+		sourceColumn: DayOfWeekName
+		sortByColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekNameShort_2
+		dataType: string
+		lineageTag: bd14e411-00a8-48fb-b741-458c2713b3f6
+		summarizeBy: none
+		sourceColumn: DayOfWeekNameShort_2
+		sortByColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekNameShort_3
+		dataType: string
+		lineageTag: 8206cd30-1e68-467e-83eb-9c8eb61c8434
+		summarizeBy: none
+		sourceColumn: DayOfWeekNameShort_3
+		sortByColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'YTD/YTG week'
+		dataType: string
+		lineageTag: 5dd7534d-d6c1-4b4d-9895-332788bc5ed1
+		summarizeBy: none
+		sourceColumn: YTD/YTG week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'YTD/YTG month'
+		dataType: string
+		lineageTag: d206f411-230f-4d51-aada-662f95ec377d
+		summarizeBy: none
+		sourceColumn: YTD/YTG month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'YTD/YTG day'
+		dataType: string
+		lineageTag: 869bbac5-590b-4942-a849-478f1063afd0
+		summarizeBy: none
+		sourceColumn: YTD/YTG day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Offset_Year
+		dataType: int64
+		formatString: 0
+		lineageTag: bfe7a1d6-9327-4f79-9fbf-b26a4c1b0cfc
+		summarizeBy: sum
+		sourceColumn: Offset_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Offset_Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 96d4ea4e-4499-4f36-a91e-f1f55892efd2
+		summarizeBy: sum
+		sourceColumn: Offset_Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Offset_Week
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c295d0e-f124-4bb7-8485-78e17b124db4
+		summarizeBy: sum
+		sourceColumn: Offset_Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Offset_Weekday
+		dataType: int64
+		formatString: 0
+		lineageTag: ec8503bc-c2ac-49e6-9206-17f301d2466f
+		summarizeBy: sum
+		sourceColumn: Offset_Weekday
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WTD/WTG day'
+		dataType: string
+		lineageTag: dc2e1ac6-d1f1-4b4c-a470-1cb3f96aa384
+		summarizeBy: none
+		sourceColumn: WTD/WTG day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MTD/MTG day'
+		dataType: string
+		lineageTag: 5e9551c5-ad4c-4d16-bd60-2b505a315a35
+		summarizeBy: none
+		sourceColumn: MTD/MTG day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Today
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 08e39b5d-f98c-4ab2-b232-52dbf53baa03
+		summarizeBy: none
+		sourceColumn: Today
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Past_Now_Future_int
+		dataType: int64
+		formatString: 0
+		lineageTag: bf3a71e7-27c3-4c7d-83a7-2661d9781170
+		summarizeBy: sum
+		sourceColumn: Past_Now_Future_int
+
+		annotation SummarizationSetBy = Automatic
+
+	column Past_Now_Future
+		dataType: string
+		lineageTag: 01735953-d2bb-4b9b-8070-27881c3b60de
+		summarizeBy: none
+		sourceColumn: Past_Now_Future
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: c11d7658-9c5e-42bf-9fce-ac8db524e532
+		summarizeBy: sum
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekToday
+		dataType: int64
+		formatString: 0
+		lineageTag: 238f1ea1-dddc-452f-bf2d-b7d8cc69b24a
+		summarizeBy: sum
+		sourceColumn: WeekToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Week
+		dataType: string
+		lineageTag: a9b3ed72-637b-4215-9b0e-f1111f9ffc57
+		summarizeBy: none
+		sourceColumn: Year-Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column hide
+		dataType: string
+		lineageTag: e55f9b82-277a-4e3f-9fc7-868b14e9025b
+		summarizeBy: none
+		sourceColumn: hide
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthDate
+		dataType: string
+		lineageTag: d9aa9a2f-cc17-4175-b68d-11c902e289a1
+		summarizeBy: none
+		sourceColumn: MonthDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekStartDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b92a09b0-ee4c-4635-afab-e6ae5a480260
+		summarizeBy: none
+		sourceColumn: WeekStartDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WeekEndDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 62ef22b6-2dbe-4dca-9b2e-537982f1b5eb
+		summarizeBy: none
+		sourceColumn: WeekEndDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column IsLast7Days
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 720460a5-2623-4403-b696-f3cade4f4efa
+		summarizeBy: none
+		sourceColumn: IsLast7Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLast30Days
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d9d39f99-a38d-482c-a5ec-54a29b49c2e9
+		summarizeBy: none
+		sourceColumn: IsLast30Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLast90Days
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 395b8603-06f5-4a9b-a06c-60afad034abf
+		summarizeBy: none
+		sourceColumn: IsLast90Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLast180Days
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bd4eec8c-7160-491f-8992-bcd62c981038
+		summarizeBy: none
+		sourceColumn: IsLast180Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLast365Days
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 191dc089-9632-4231-ab04-5178352cd54a
+		summarizeBy: none
+		sourceColumn: IsLast365Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNext90Days
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5e92b789-6c2e-449f-8b35-420b36316f8e
+		summarizeBy: none
+		sourceColumn: IsNext90Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentWeek
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f3b6339c-e7da-4460-990b-666eba5706b7
+		summarizeBy: none
+		sourceColumn: IsCurrentWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentMonth
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0971ba04-9a89-422e-a4b5-49191af3b4f8
+		summarizeBy: none
+		sourceColumn: IsCurrentMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentQuarter
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ea7a35aa-dee6-41e7-a9a3-b4d3399f00bb
+		summarizeBy: none
+		sourceColumn: IsCurrentQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpUntilToday
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6af2c59e-0ea7-4811-a63b-5519fcc3b181
+		summarizeBy: none
+		sourceColumn: UpUntilToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthAge
+		dataType: string
+		lineageTag: 4cde5cf1-3b5b-4f90-9e76-baa9d5060034
+		summarizeBy: none
+		sourceColumn: MonthAge
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthSlicer
+		dataType: string
+		lineageTag: 5e495a51-5914-4631-b866-36b0d47bf2a5
+		summarizeBy: none
+		sourceColumn: MonthSlicer
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekAge
+		dataType: int64
+		formatString: 0
+		lineageTag: a7c3f56b-63e0-4168-b66c-afd7143df18b
+		summarizeBy: sum
+		sourceColumn: WeekAge
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Period'
+		dataType: string
+		lineageTag: 31563b90-ef0b-41d7-aea4-527b7db6e5f8
+		summarizeBy: none
+		sourceColumn: Week Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Slicer'
+		dataType: string
+		lineageTag: d80899dd-a238-4f8a-bbdb-e5bd54ca9cb7
+		summarizeBy: none
+		sourceColumn: Week Slicer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Qtr Age'
+		dataType: string
+		lineageTag: c629601e-e675-4c36-82d9-7bc5d6ffdd78
+		summarizeBy: none
+		sourceColumn: Qtr Age
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SD_Datetable-e1d85ea7-576c-40af-b92c-ced022e29c3f = m
+		mode: import
+		queryGroup: SystemData\Datetable
+		source = ```
+				let
+				    Quelle = List.Dates(#date(Date.Year(#date(2010,1,1)),Date.Month(#date(2010,1,1)),Date.Day(#date(2010,1,1))),Duration.TotalDays(#date(2030,1,1)-#date(2010,1,1)),#duration(1, 0, 0, 0)),
+				    #"In Tabelle konvertiert" = Table.FromList(Quelle, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"In Tabelle konvertiert",{{"Column1", type date, #"Datetable Sprache"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Geänderter Typ", each [Column1] >= #"Datetable Startdatum" and [Column1] <= #"Datetable Enddatum"),
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"Filtered Rows",{{"Column1", "Date"}}),
+				    #"Added DateAsInteger" = Table.AddColumn(#"Umbenannte Spalten", "DateAsInteger", each Date.ToText([Date],"YYYYMMDD"), type text),
+				    #"Added Year" = Table.AddColumn(#"Added DateAsInteger", "Year", each Text.Start([DateAsInteger],4), type text),
+				    #"Added YearShort" = Table.AddColumn(#"Added Year", "YearShort", each Text.End([Year],2), type text),
+				    #"Added Quarter" = Table.AddColumn(#"Added YearShort", "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
+				    #"Added QuarterName" = Table.AddColumn(#"Added Quarter", "QuarterName", each "Q" & Number.ToText([Quarter]), type text),
+				    #"Added Month" = Table.AddColumn(#"Added QuarterName", "Month", each Date.ToText([Date],"MM"), type text),
+				    #"Added MonthName" = Table.AddColumn(#"Added Month", "MonthName", each Date.ToText([Date],"MMMM", #"Datetable Sprache"), type text),
+				    #"Added MonthNameShort" = Table.AddColumn(#"Added MonthName", "MonthNameShort", each Date.ToText([Date],"MMM", #"Datetable Sprache"), type text),
+				    #"Added Day" = Table.AddColumn(#"Added MonthNameShort", "Day", each Text.End([DateAsInteger],2), type text),
+				    #"Added DayOfWeek" = Table.AddColumn(#"Added Day", "DayOfWeek", each Date.DayOfWeek([Date]), Int64.Type),
+				    #"Added DayOfWeekName" = Table.AddColumn(#"Added DayOfWeek", "DayOfWeekName", each Date.DayOfWeekName([Date], #"Datetable Sprache"), type text),
+				    #"Added DayOfWeekName3Char" = Table.AddColumn(#"Added DayOfWeekName", "DayOfWeekNameShort_2", each Text.Start([DayOfWeekName],2), type text),
+				    #"Added DayOfWeekName4Char" = Table.AddColumn(#"Added DayOfWeekName3Char", "DayOfWeekNameShort_3", each Text.Start([DayOfWeekName],4), type text),
+				    #"Added Today" = Table.AddColumn(#"Added DayOfWeekName4Char", "Today", each DateTime.Date(DateTime.LocalNow()), type date),
+				    #"Added PastNowFuture" = Table.AddColumn(#"Added Today", "Past_Now_Future_int", each if [Date] < [Today] then -1 else if [Date] = [Today] then 0 else if [Date] > [Today] then 1 else 99999, Int64.Type),
+				    #"Added PastNowFutureTxt" = Table.AddColumn(#"Added PastNowFuture", "Past_Now_Future", each if [Past_Now_Future_int]=-1 then "Past" else if [Past_Now_Future_int]=0 then "Now" else if [Past_Now_Future_int]=1 then "Future" else "error", type text),
+				    #"Added Week 123" = Table.AddColumn(#"Added PastNowFutureTxt", "Week", each if [Month] = 1 then
+				if (if Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)=0
+				then Number.RoundDown((Date.DayOfYear(#date(Date.Year([Date])-1,12,31))-(Date.DayOfWeek(#date(Date.Year([Date])-1,12,31), Day.Monday)+1)+10)/7)
+				else if (Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)=53 and (Date.DayOfWeek(#date(Date.Year([Date]),12,31), Day.Monday)+1<4))
+				then 1 else Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)) = 52 then 1 else (if Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)=0
+				then Number.RoundDown((Date.DayOfYear(#date(Date.Year([Date])-1,12,31))-(Date.DayOfWeek(#date(Date.Year([Date])-1,12,31), Day.Monday)+1)+10)/7)
+				else if (Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)=53 and (Date.DayOfWeek(#date(Date.Year([Date]),12,31), Day.Monday)+1<4))
+				then 1 else Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7))
+				else (if Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)=0
+				then Number.RoundDown((Date.DayOfYear(#date(Date.Year([Date])-1,12,31))-(Date.DayOfWeek(#date(Date.Year([Date])-1,12,31), Day.Monday)+1)+10)/7)
+				else if (Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7)=53 and (Date.DayOfWeek(#date(Date.Year([Date]),12,31), Day.Monday)+1<4))
+				then 1 else Number.RoundDown((Date.DayOfYear([Date])-(Date.DayOfWeek([Date], Day.Monday)+1)+10)/7))),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Week 123",{{"Year", Int64.Type}, {"YearShort", Int64.Type}, {"Quarter", Int64.Type}, {"Month", Int64.Type}, {"Day", Int64.Type}, {"DayOfWeek", Int64.Type}}),
+				    #"Added WeekToday" = Table.AddColumn(#"Changed Type", "WeekToday", each (if Number.RoundDown((Date.DayOfYear(DateTime.LocalNow() as datetime)-(Date.DayOfWeek(DateTime.LocalNow() as datetime, Day.Monday)+1)+10)/7)=0
+				then Number.RoundDown((Date.DayOfYear(#date(Date.Year(DateTime.LocalNow() as datetime)-1,12,31))-(Date.DayOfWeek(#date(Date.Year(DateTime.LocalNow() as datetime)-1,12,31), Day.Monday)+1)+10)/7)
+				else if (Number.RoundDown((Date.DayOfYear(DateTime.LocalNow() as datetime)-(Date.DayOfWeek(DateTime.LocalNow() as datetime, Day.Monday)+1)+10)/7)=53
+				and (Date.DayOfWeek(#date(Date.Year(DateTime.LocalNow() as datetime),12,31), Day.Monday)+1<4))
+				then 1 else Number.RoundDown((Date.DayOfYear(DateTime.LocalNow() as datetime)-(Date.DayOfWeek(DateTime.LocalNow() as datetime, Day.Monday)+1)+10)/7))),
+				    #"Changed YearinText" = Table.TransformColumnTypes(#"Added WeekToday",{{"Year", type text}}),
+				    #"Added LastDayofYear" = Table.AddColumn(#"Changed YearinText", "LastdayofYear", each DateTime.From(Text.Combine({[Year],",12,31"}))),
+				    #"Added Custom" = Table.AddColumn(#"Added LastDayofYear", "LastWeekofYear", each if [Month] = 1 then
+				if (if Number.RoundDown((Date.DayOfYear([LastdayofYear])-(Date.DayOfWeek([LastdayofYear], Day.Monday)+1)+10)/7)=0
+				then Number.RoundDown((Date.DayOfYear(#date(Date.Year([LastdayofYear])-1,12,31))-(Date.DayOfWeek(#date(Date.Year([LastdayofYear])-1,12,31), Day.Monday)+1)+10)/7)
+				else if (Number.RoundDown((Date.DayOfYear([LastdayofYear])-(Date.DayOfWeek([LastdayofYear], Day.Monday)+1)+10)/7)=53 and (Date.DayOfWeek(#date(Date.Year([LastdayofYear]),12,31), Day.Monday)+1<4))
+				then 1 else Number.RoundDown((Date.DayOfYear([LastdayofYear])-(Date.DayOfWeek([LastdayofYear], Day.Monday)+1)+10)/7)) = 52 then 1 else (if Number.RoundDown((Date.DayOfYear([LastdayofYear])-(Date.DayOfWeek([LastdayofYear], Day.Monday)+1)+10)/7)=0
+				then Number.RoundDown((Date.DayOfYear(#date(Date.Year([LastdayofYear])-1,12,31))-(Date.DayOfWeek(#date(Date.Year([LastdayofYear])-1,12,31), Day.Monday)+1)+10)/7)
+				else if (Number.RoundDown((Date.DayOfYear([LastdayofYear])-(Date.DayOfWeek([LastdayofYear], Day.Monday)+1)+10)/7)=53 and (Date.DayOfWeek(#date(Date.Year([LastdayofYear]),12,31), Day.Monday)+1<4))
+				then 1 else Number.RoundDown((Date.DayOfYear([LastdayofYear])-(Date.DayOfWeek([LastdayofYear], Day.Monday)+1)+10)/7))
+				else (if Number.RoundDown((Date.DayOfYear([LastdayofYear])-(Date.DayOfWeek([LastdayofYear], Day.Monday)+1)+10)/7)=0
+				then Number.RoundDown((Date.DayOfYear(#date(Date.Year([LastdayofYear])-1,12,31))-(Date.DayOfWeek(#date(Date.Year([LastdayofYear])-1,12,31), Day.Monday)+1)+10)/7)
+				else if (Number.RoundDown((Date.DayOfYear([LastdayofYear])-(Date.DayOfWeek([LastdayofYear], Day.Monday)+1)+10)/7)=53 and (Date.DayOfWeek(#date(Date.Year([LastdayofYear]),12,31), Day.Monday)+1<4))
+				then 1 else Number.RoundDown((Date.DayOfYear([LastdayofYear])-(Date.DayOfWeek([LastdayofYear], Day.Monday)+1)+10)/7))),
+				    #"Changed LastDayofYear" = Table.TransformColumnTypes(#"Added Custom",{{"LastdayofYear", type date}, {"Week", Int64.Type}, {"WeekToday", Int64.Type}}),
+				    #"Changed BackYearinDec" = Table.TransformColumnTypes(#"Changed LastDayofYear",{{"Year", Int64.Type}}),
+				    #"Added YTDYTG week" = Table.AddColumn(#"Changed BackYearinDec", "YTD/YTG week", each if [Week] < [WeekToday] then "YTD" else "YTG"),
+				    #"Added YTDYTG month" = Table.AddColumn(#"Added YTDYTG week", "YTD/YTG month", each if [Month] < Date.Month(DateTime.LocalNow() as datetime ) then "YTD" else "YTG"),
+				    #"Added YTDYTG day" = Table.AddColumn(#"Added YTDYTG month", "YTD/YTG day", each if Date.DayOfYear([Date]) < Date.DayOfYear(DateTime.LocalNow() as datetime ) then "YTD" else "YTG"),
+				    #"Added OffSetYear" = Table.AddColumn(#"Added YTDYTG day", "Offset_Year", each [Year] - Date.Year(DateTime.LocalNow())),
+				    #"Added OffSetMonth" = Table.AddColumn(#"Added OffSetYear", "Offset_Month", each [Month] - 
+				(if [Month] <= Date.Month(DateTime.LocalNow() as datetime) then Date.Month(DateTime.LocalNow() as datetime) else Date.Month(DateTime.LocalNow() as datetime)+12)),
+				    #"Added OffSetWeek" = Table.AddColumn(#"Added OffSetMonth", "Offset_Week", each [Week] - 
+				(if [Week] <= [WeekToday] then [WeekToday] else [WeekToday]+ (if [LastWeekofYear] = 53 then 53 else 52))),
+				    #"Added OffSetWeekday" = Table.AddColumn(#"Added OffSetWeek", "Added OffSetWeekday", each [DayOfWeek] - 
+				(if [DayOfWeek] <= Date.DayOfWeek(DateTime.LocalNow() as datetime, Day.Sunday) then Date.DayOfWeek(DateTime.LocalNow() as datetime, Day.Sunday) else Date.DayOfWeek(DateTime.LocalNow() as datetime, Day.Sunday)+7)),
+				    #"Added WTD/WTG day" = Table.AddColumn(#"Added OffSetWeekday", "WTD/WTG day", each if [DayOfWeek] <  Date.DayOfWeek(DateTime.LocalNow() as datetime, Day.Sunday) then "WTD" else "WTG"),
+				    #"Added MTD/MTG day" = Table.AddColumn(#"Added WTD/WTG day", "MTD/MTG day", each if [Day] < Date.Day(DateTime.LocalNow() as datetime) then "MTD" else "MTG"),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added MTD/MTG day",{{"Added OffSetWeekday", Int64.Type}, {"Offset_Week", Int64.Type}, {"Offset_Month", Int64.Type}, {"Offset_Year", Int64.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type1",{"LastdayofYear", "LastWeekofYear"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Added OffSetWeekday", "Offset_Weekday"}}),
+				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns", "Year-Week", each Number.ToText( if [Month] = 1 then 
+				if [Week] > 6 then [Year]-1
+				else [Year]
+				else [Year])&"-"& (if [Week] < 10 then "0" & Number.ToText([Week])
+				else Number.ToText([Week]))),
+				    MonthDate = Table.AddColumn(#"Added Custom1" , "MonthDate", 
+				    each  #date(Date.Year([Date]), Date.Month([Date]), 1)),
+				    #"Added WeekStartDate" = Table.AddColumn(MonthDate, "WeekStartDate", each Date.StartOfWeek([Date])),
+				    #"Added WeekEndDate" = Table.AddColumn(#"Added WeekStartDate", "WeekEndDate", each Date.AddDays([WeekStartDate],6)),
+				    #"Added IsLast7Days" = Table.AddColumn(#"Added WeekEndDate", "IsLast7Days", each if [Date] <= [Today]  then if [Date] >= Date.AddDays([Today], -6) then 1 else 0 else 0),
+				    #"Added IsLast30Days" = Table.AddColumn(#"Added IsLast7Days", "IsLast30Days", each if [Date] <= [Today]  then if [Date] >= Date.AddDays([Today], -29) then 1 else 0 else 0),
+				    #"Added IsLast90Days" = Table.AddColumn(#"Added IsLast30Days", "IsLast90Days", each if [Date] <= [Today]  then if [Date] >= Date.AddDays([Today], -89) then 1 else 0 else 0),
+				    #"Added IsLast180Days" = Table.AddColumn(#"Added IsLast90Days", "IsLast180Days", each if [Date] <= [Today]  then if [Date] >= Date.AddDays([Today], -179) then 1 else 0 else 0),
+				    #"Added IsLast365Days" = Table.AddColumn(#"Added IsLast180Days", "IsLast365Days", each if [Date] <= [Today]  then if [Date] >= Date.AddDays([Today], -364) then 1 else 0 else 0),
+				    #"Added IsNext90Days" = Table.AddColumn(#"Added IsLast365Days", "IsNext90Days", each if [Date] >= [Today]  then if [Date] <= Date.AddDays([Today], 90) then 1 else 0 else 0),
+				    #"Added IsCurrentWeek" = Table.AddColumn(#"Added IsNext90Days", "IsCurrentWeek", each if Date.IsInCurrentWeek([Date]) then 1 else 0),
+				    #"Added IsCurrentMonth" = Table.AddColumn(#"Added IsCurrentWeek", "IsCurrentMonth", each if Date.IsInCurrentMonth([Date]) then 1 else 0),
+				    #"Added IsCurrentQuarter" = Table.AddColumn(#"Added IsCurrentMonth", "IsCurrentQuarter", each if Date.IsInCurrentQuarter([Date]) then 1 else 0),
+				    #"Added UpUntilToday" = Table.AddColumn(#"Added IsCurrentQuarter", "UpUntilToday", each if [Date]<= [Today] then 1 else 0),
+				    #"Changed BinaryToLogical" = Table.TransformColumnTypes(#"Added UpUntilToday",{{"IsNext90Days", type logical}, {"IsLast7Days", type logical}, {"IsLast30Days", type logical}, {"IsLast90Days", type logical}, {"IsLast180Days", type logical}, {"IsLast365Days", type logical}, {"IsCurrentWeek", type logical}, {"IsCurrentMonth", type logical}, {"UpUntilToday", type logical}}),
+				    #"Added MonthAge" = Table.AddColumn(#"Changed BinaryToLogical", "MonthAge", each (Date.Year(DateTime.LocalNow())*12) + Date.Month(DateTime.LocalNow())-(Date.Year([MonthDate])*12)-Date.Month([MonthDate])),
+				    #"Added MonthSlicer" = Table.AddColumn(#"Added MonthAge", "MonthSlicer", each if [MonthAge]= 0 then "Current Month" else
+				        if [MonthAge]=1 then "Last Month"
+				        else Date.ToText([MonthDate], "MMM yyyy", #"Datetable Sprache")),
+				    WeekAge = Table.AddColumn(#"Added MonthSlicer", "WeekAge", each (Date.Year(DateTime.LocalNow())*52) + Date.WeekOfYear(DateTime.LocalNow())-(Date.Year([WeekStartDate])*52)-Date.WeekOfYear([WeekStartDate])),
+				    #"Changed Type3" = Table.TransformColumnTypes(WeekAge,{{"WeekAge", Int64.Type}, {"IsCurrentQuarter", type logical}, {"WeekStartDate", type date, #"Datetable Sprache"}, {"WeekEndDate", type date, #"Datetable Sprache"}}),
+				    #"Added Week Period" = Table.AddColumn(#"Changed Type3", "Week Period", each Date.ToText([WeekStartDate], "dd MMM yy", #"Datetable Sprache") & "-" & Date.ToText(Date.AddDays([WeekStartDate],6), "dd MMM yy", #"Datetable Sprache")),
+				    #"Added Week Slicer" = Table.AddColumn(#"Added Week Period", "Week Slicer", each if [WeekAge]= 0 then "Current Week" else
+				if [WeekAge]=1 then "Last Week"
+				else [Week Period]),    
+				    #"Added QtrAge" = Table.AddColumn(#"Added Week Slicer", "Qtr Age", each (Date.Year(DateTime.LocalNow())*3) + Number.IntegerDivide(Date.Month(DateTime.LocalNow())-1,3)-(Date.Year([MonthDate])*3)-Number.IntegerDivide(Date.Month([MonthDate])-1,3)),
+				    #"Added Custom3" = Table.AddColumn(#"Added QtrAge", "hide", each 1)
+				in
+				    #"Added Custom3"
+				```
+
+	annotation PBI_ResultType = Table
+

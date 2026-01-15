@@ -1,0 +1,56 @@
+table SD_Logo_BildURLs
+	isHidden
+	lineageTag: a663c859-60a2-4316-abac-636ec718cab6
+
+	column Logo
+		dataType: string
+		isHidden
+		lineageTag: 2574adf5-0693-49e5-b017-33215637578f
+		summarizeBy: none
+		sourceColumn: Logo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Link
+		dataType: string
+		isHidden
+		lineageTag: 208112df-d7c8-4bab-9abd-1322148fff33
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Link
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NotIndustries
+		dataType: string
+		isHidden
+		lineageTag: 30a83b76-3ce9-4588-90d7-3e04932a3b05
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: NotIndustries
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SD_Logo_BildURLs-c869fd53-e6fd-44f7-ae22-cf0f20bd6699 = m
+		mode: import
+		queryGroup: SystemData\Parameter
+		source =
+				let
+				    Quelle = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("rdG9DoMgEADgV2mYLab+LN1sao2DtklHY4w/BGkUiGB8/YKh0bk4cXfAd+QoCgAcMJ4J7WYhJ4JUBkqnAL2UXFxddyRtz9mCpoY0A2v43AykhTqELZsQXNRNtghIkXQHhplw33FygZxiJQmEL4eA3gZ6h4D+BvqHgMEGBoeA4QaGP1CtHcFE1kOW5neV/d/BONWodipdWtuZJi9N3VKrBub0nn3msRXJKFqfWhEqp1rV4Ydjy0knWRSZSevQ/uu0Uj2yPXpS6QqXXw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Logo = _t, Industrie = _t, NotIndustries = _t]),
+				    #"Ersetzter Wert1" = Table.ReplaceValue(Quelle,".PNG","_V2.PNG",Replacer.ReplaceText,{"Logo"}),
+				    #"Ersetzter Wert" = Table.ReplaceValue(#"Ersetzter Wert1","","https://michpowerbiblobpublic.blob.core.windows.net/logos/MIND_V2.png",Replacer.ReplaceValue,{"Logo"}),
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"Ersetzter Wert",{{"Logo", "Link full"}, {"Industrie", "Logo"}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(#"Umbenannte Spalten", "Link", each Text.Replace([Link full],"300dpi","300dpi-MIND"), type text),
+				    #"Filtered Rows" = Table.SelectRows(#"Hinzugefügte benutzerdefinierte Spalte", each [Logo] = Logo),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"Link full"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

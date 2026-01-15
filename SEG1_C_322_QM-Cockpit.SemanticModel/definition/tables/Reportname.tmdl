@@ -1,0 +1,25 @@
+/// Bitte wähle den korrekten Report aus (numerische Sortierung)
+table Reportname
+	isHidden
+	lineageTag: 1085b883-f39b-45b1-97f2-9c610297e21d
+
+	column Reportname
+		dataType: string
+		isHidden
+		lineageTag: e3ed857f-9596-4a3a-bfd2-ee3d8cf32068
+		summarizeBy: none
+		sourceColumn: Reportname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Reportname-032a2f12-b9b8-493f-b223-2b49c98a4816 = m
+		mode: import
+		queryGroup: SystemData\Parameter
+		source = "SEG1_C_322_QM-Cockpit" meta [IsParameterQuery=true, ExpressionIdentifier=ReportNameParameterSelection, Type="Text", IsParameterQueryRequired=true]
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Text
+
